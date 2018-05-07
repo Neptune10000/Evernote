@@ -61,11 +61,22 @@ $plotPCA(vsd, intgroup=c("condition", "type"))
 #也可以使用ggplot2
 > pcaData <- plotPCA(vsd, intgroup=c("condition", "tissue"), returnData=TRUE)
 > percentVar <- round(100 * attr(pcaData, "percentVar"))
-> ggplot(pcaData, aes(PC1, PC2, color=condition)) +
-+     geom_point(size=3) +
-+     xlab(paste0("PC1: ",percentVar[1],"% variance")) +
-+     ylab(paste0("PC2: ",percentVar[2],"% variance")) + 
-+     coord_fixed()
+> ggplot(pcaData, aes(PC1, PC2,  color=tissue,shape = condition)) +
+    geom_point(size=3) +
+    xlab(paste0("PC1: ",percentVar[1],"% variance")) +
+    ylab(paste0("PC2: ",percentVar[2],"% variance")) + 
+    coord_fixed() + 
+    theme(plot.title=element_text(family="Calibri", face="bold", size=20, hjust=0.5),
+    axis.title=element_text(face="bold", size=10),
+    axis.text=element_text(size=12),
+    legend.title=element_blank(),
+    legend.text = element_text(size = 12),
+    legend.key.height=unit(1,"cm"), legend.key.width=unit(0.5, "cm"),
+    panel.grid.major =element_blank(), 
+    panel.grid.minor = element_blank(),
+    panel.background = element_blank()) + 
+    geom_hline(yintercept=0, linetype="dashed", col="#D3D3D3", size=0.8) + 
+    geom_vline(xintercept=0, linetype="dashed", col="#D3D3D3", size=0.8)
 ```
 
 ##其它
