@@ -153,8 +153,6 @@ as.dist((1-cor(t(x),method = pearson)))
 
 #ggplot2
 
-[TOC]
-
 ##PCA画图
 
 ```R
