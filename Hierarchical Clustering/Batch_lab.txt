@@ -1,0 +1,40 @@
+Tissue_cell	batch
+Adrenal gland_1	1
+Adrenal gland_2	1
+Bipolar neuron_1	1
+Bipolar neuron_2	1
+Cerebellum_1	1
+Cerebellum_2	1
+Diencephalon_1	1
+Diencephalon_2	1
+Frontal cortex_1	1
+Frontal cortex_2	1
+Heart_1	1
+Heart_2	1
+Lung_1	1
+Lung_2	1
+Mesenchymal stem cell_1	2
+Mesenchymal stem cell_2	2
+Metanephros_1	1
+Metanephros_2	1
+Occipital lobe_1	1
+Occipital lobe_2	1
+Ovary_1	1
+Ovary_2	1
+Parietal lobe_1	1
+Parietal lobe_2	1
+Spinal cord_1	1
+Spinal cord_2	1
+Spleen_1	1
+Spleen_2	1
+Stomach_1	1
+Stomach_2	1
+Temporal lobe _1	1
+Temporal lobe _2	1
+Testis_1	1
+Testis_2	1
+Thyroid gland_1	1
+Thyroid gland_2	1
+Tibial nerve_1	1
+Tibial nerve_2	1
+Tibial nerve_3	1
