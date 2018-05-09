@@ -38,6 +38,10 @@ cbind(a,b)
 gene_FPKM<-cbind(`adrenal gland_ENCFF309JAC.tsv`[,0],`adrenal gland_ENCFF309JAC.tsv`[,1],`adrenal gland_ENCFF309JAC.tsv`[,7],`adrenal gland_ENCFF578HON.tsv`[,7],`bipolar neuron_ENCFF249CKU.tsv`[,7],`bipolar neuron_ENCFF688CEH.tsv`[,7],`cerebellum_ENCFF902DQW.tsv`[,7],`cerebellum_ENCFF947JHW.tsv`[,7],`diencephalon_ENCFF056KYM.tsv`[,7],`diencephalon_ENCFF224CON.tsv`[,7],`frontal cortex_ENCFF847LUK.tsv`[,7],`frontal cortex_ENCFF947SAO.tsv`[,7],`heart_ENCFF455HQT.tsv`[,7],`heart_ENCFF803YED.tsv`[,7],`lung_ENCFF573QQU.tsv`[,7],`lung_ENCFF649ECE.tsv`[,7],`mesenchymal stem cell_ENCFF290OQE.tsv`[,7],`mesenchymal stem cell_ENCFF693WRN.tsv`[,7],`metanephros_ENCFF397JTM.tsv`[,7],`metanephros_ENCFF904AZG.tsv`[,7],`occipital lobe_ENCFF450SDZ.tsv`[,7],`occipital lobe_ENCFF757CQE.tsv`[,7],`ovary_ENCFF132XQU.tsv`[,7],`ovary_ENCFF809AOV.tsv`[,7],`parietal lobe_ENCFF637ZPY.tsv`[,7],`parietal lobe_ENCFF924PET.tsv`[,7],`skeletal muscle tissue.tsv`[,7],`skeletal muscle tissue_2.tsv`[,7],`skin of body.tsv`[,7],`skin of body_2.tsv`[,7],`spinal cord_ENCFF126UNL.tsv`[,7],`spinal cord_ENCFF316BNE.tsv`[,7],`spleen_ENCFF474KYX.tsv`[,7],`spleen_ENCFF653LOC.tsv`[,7],`stomach.tsv`[,7],`stomach_2.tsv`[,7],`stomach_ENCFF046GFN.tsv`[,7],`stomach_ENCFF645CNL.tsv`[,7],`temporal lobe_ENCFF682JEP.tsv`[,7],`temporal lobe_ENCFF845GMQ.tsv`[,7],`testis_ENCFF857HXK.tsv`[,7],`testis_ENCFF863ERP.tsv`[,7],`thyroid gland_ENCFF734HNL.tsv`[,7],`thyroid gland_ENCFF860IOK.tsv`[,7],`tibial nerve_ENCFF046AFQ.tsv`[,7],`tibial nerve_ENCFF470ZWQ.tsv`[,7],`tibial nerve_ENCFF597HTT.tsv`[,7],`tongue.tsv`[,7],`tongue_2.tsv`[,7],`uterus.tsv`[,7],`uterus_2.tsv`[,7])
 
 ```
+##矩阵元素提取
+
+![](2018-05-09-09-32-50.png)
+
 ##矩阵大小
 
 ```{r}
@@ -126,8 +130,11 @@ plot(out.hclust,hang = -1,main="euclidean")
 ```
 - 层次聚类距离选择
 help(dist)
-as.dist((1-cor(t(x)))/2)
-as.dist((1-cor(t(x),method = pearson)))
+    - Use correlations between variables "as distance"
+dd <- as.dist((1 - cor(USJudgeRatings))/2)
+round(1000 * dd) # (prints more nicely)
+plot(hclust(dd)) # to see a dendrogram of clustered variables
+
 1.欧氏距离
 2.曼哈顿距离
 3.切比雪夫距离
