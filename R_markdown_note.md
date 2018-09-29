@@ -26,7 +26,7 @@ When you save the notebook, an HTML file containing the code and output will be 
 mode(x)
 
 ## 从一个文件夹中逐个读取文件
-```{r}
+```R
 temp = list.files(pattern = "*.tsv")
 for (i in 1:length(temp)) assign(temp[i],read.table(temp[i]))
 ```
@@ -73,7 +73,7 @@ write.table (f,file ="f.csv", row.names = FALSE, col.names =FALSE)    ---以空�
 write.table (f,file ="f.csv", row.names = FALSE, col.names =FALSE, quote =FALSE)    ---以空格分隔数据列，不含行号，不含列名，字符串不带引号
 
 ##Heatmap
-```{r}
+```R
 library(RColorBrewer)
 library(gplots)
 table <- read.table("miRNA_expression.txt", header=TRUE)
